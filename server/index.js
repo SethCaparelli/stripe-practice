@@ -27,9 +27,9 @@ app.post("/charge", (request, response) => {
       if(error) {
         response.status(400).send(error.message)
       } else {
-        response.send(charge)
+        response.send("Thanks for completing the payment")
       }
-  });
+  })
 })
 
 app.use((req, res, next) => {
