@@ -1,6 +1,4 @@
-const dotenv = require("dotenv").config()
-
-console.log(process.env.SH_KEY)
+require("dotenv").config({path:"../.gitignore/.env"})
 
 const express = require('express');
 const bodyParser = require('body-parser');
