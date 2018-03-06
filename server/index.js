@@ -1,4 +1,4 @@
-require("dotenv").config({path:"../.gitignore/.env"})
+require("dotenv").config({path:"./.gitignore/.env"})
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -19,7 +19,7 @@ app.get('/', (request, response) => {
 
 app.post("/charge", (request, response) => {
   stripe.charges.create({
-    amount: 999,
+    amount: 387,
     currency: "usd",
     description: "charge to " + request.body.stripeEmail,
     source: request.body.stripeToken,
@@ -27,7 +27,7 @@ app.post("/charge", (request, response) => {
       if(error) {
         response.status(400).send(error.message)
       } else {
-        response.send("Thanks for completing the payment")
+        response.send(`<h1>Success</h1><p>Thank you for completing the payment</p>`)
       }
   })
 })
